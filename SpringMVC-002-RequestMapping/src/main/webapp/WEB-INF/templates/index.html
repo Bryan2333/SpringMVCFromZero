@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>首页</h1>
+<a th:href="@{/hello/testRequestMapping}">测试RequestMapping的位置</a> <br/>
+<a th:href="@{/hello/testRequestMapping}">测试RequestMapping的value属性 testRequestMapping</a> <br/>
+<a th:href="@{/hello/test}">测试RequestMapping的value属性 test</a> <br/>
+<a th:href="@{/hello/test}">测试RequestMapping的method属性 get</a> <br/>
+
+<form th:action="@{/hello/test}" method="post">
+   <input type="submit" value="测试RequestMapping的method属性">
+</form>
+
+<a th:href="@{/hello/testGetMapping}">测试GetMapping注解</a> <br/>
+
+<form th:action="@{/hello/testPostMapping}" method="post">
+    <input type="submit" value="测试PostMapping注解">
+</form>
+
+<form th:action="@{/hello/testPut}" method="put">
+    <input type="submit" value="测试Put请求方式">
+</form>
+
+<a th:href="@{/hello/testParams(username='noadmin', password='123456')}">测试RequestMapping的params属性</a> <br/>
+<a th:href="@{/hello/testHeaders}">测试RequestMapping的headers属性</a> <br/>
+<a th:href="@{/hello/a1a/testAnt}">测试RequestMapping的Ant风格路径 ?</a> <br/>
+<a th:href="@{/hello/abbba/testAnt}">测试RequestMapping的Ant风格路径 *</a> <br/>
+<a th:href="@{/hello/testPath/1/admin}">测试RequestMapping 支持路径占位符</a>
+</body>
+</html>

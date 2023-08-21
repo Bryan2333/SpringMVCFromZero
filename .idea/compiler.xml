@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="SpringMVC-012-AnnotationConfig" />
+        <module name="SpringMVC-002-RequestMapping" />
+        <module name="SpringMVC-004-ShareData" />
+        <module name="SpringMVC-006-JstlView" />
+        <module name="SpringMVC-001-Demo1" />
+        <module name="SpringMVC-008-RESTful-Case" />
+        <module name="SpringMVC-005-View" />
+        <module name="SpringMVC-010-Interceptor" />
+        <module name="SpringMVC-009-HttpMessageConverter" />
+        <module name="SpringMVC-011-ExceptionHandler" />
+        <module name="SpringMVC-013-ProcessFlow" />
+        <module name="SpringMVC-003-GetParameters" />
+        <module name="SpringMVC-007-RESTful-Begin" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>员工信息</title>
+</head>
+<body>
+<h1>员工信息</h1>
+<table id="dataTable" style="text-align: center">
+    <tr>
+        <th colspan="5">员工信息</th>
+    </tr>
+    <tr>
+        <th>员工ID</th>
+        <th>员工姓名</th>
+        <th>员工邮件</th>
+        <th>员工性别</th>
+        <th>选项 (<a th:href="@{/toAdd}">添加员工</a> )</th>
+    </tr>
+    <tr th:each="employee : ${employeeList}">
+        <td th:text="${employee.id}"></td>
+        <td th:text="${employee.name}"></td>
+        <td th:text="${employee.email}"></td>
+        <td th:text="${employee.gender}"></td>
+        <td>
+            <!-- RESTful路径和thymeleaf参数拼接 -->
+            <a @click="deleteEmployee" th:href="@{'/employee/' + ${employee.id}}">删除</a>
+            <a th:href="@{'/employee/' + ${employee.id}}">更新</a>
+        </td>
+    </tr>
+</table>
+
+<form id="deleteEmpForm" method="post">
+    <input type="hidden" name="_method" value="DELETE">
+</form>
+
+<script type="text/javascript" th:src="@{/static/js/vue.min.js}"></script>
+<script type="text/javascript">
+    const vue = new Vue({
+        el: "#dataTable",
+        methods: {
+            deleteEmployee: function (event) {
+                // 根据ID获得表单元素
+                const deleteEmpForm = document.getElementById("deleteEmpForm");
+                // 将点击触发事件的href赋值给表单元素的action
+                deleteEmpForm.action = event.target.href;
+                // 提交表单
+                deleteEmpForm.submit();
+                // 取消超链接的默认行为
+                event.preventDefault();
+            }
+        }
+    });
+</script>
+</body>
+</html>

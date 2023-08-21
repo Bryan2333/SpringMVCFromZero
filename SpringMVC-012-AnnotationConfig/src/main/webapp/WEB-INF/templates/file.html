@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>测试上传解析器</title>
+</head>
+<body>
+<form th:action="@{/testFileUpload}" method="POST" enctype="multipart/form-data">
+    文件: <input type="file" name="file"> <br>
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>
